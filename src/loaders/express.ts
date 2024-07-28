@@ -5,7 +5,7 @@ async function expressLoader(app: Express) {
   app.use(
     cors({
       origin: "*",
-      methods: "GET, POST",
+      methods: "GET",
       credentials: true,
       optionsSuccessStatus: 204,
     }),
