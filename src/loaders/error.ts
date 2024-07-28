@@ -2,7 +2,7 @@ import { Express, Request, Response, NextFunction } from "express";
 import createError, { HttpError } from "http-errors";
 
 function errorLoader(app: Express) {
-  app.use((req, res, next) => {
+  app.use((req: Request, res: Response, next: NextFunction) => {
     next(createError(404));
   });
 
@@ -12,6 +12,7 @@ function errorLoader(app: Express) {
 
     res.status(err.status || 500);
     res.json({ result: "error", status: err.status, message: err.message });
+
     console.error(err);
   });
 }
