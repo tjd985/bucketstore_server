@@ -30,7 +30,7 @@ async function getProducts(
     res.status(200).json({
       result: SUCCESS,
       status: SUCCESS_STATUS,
-      content: products.data.body,
+      content: products.data,
     });
   } catch (err) {
     const customError = createHttpError(
